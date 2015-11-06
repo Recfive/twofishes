@@ -147,7 +147,7 @@ class MockGeocodeStorageReadService extends GeocodeStorageReadService {
 }
 
 class GeocoderSpec extends Specification {
-  GeocodeServerConfigSingleton.init(Array("--hfile_basepath", ""))
+  GeocodeServerConfigSingleton.init(Array("--hfile_basepath", "", "--vm_map_count", "65000"))
 
   def addParisFrance(store: MockGeocodeStorageReadService) = {
     val frRecord = store.addGeocode("FR", Nil, 1, 2, YahooWoeType.COUNTRY, cc="FR")
