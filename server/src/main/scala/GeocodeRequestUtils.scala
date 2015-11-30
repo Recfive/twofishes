@@ -10,7 +10,7 @@ import com.vividsolutions.jts.geom.Geometry
 import scalaj.collection.Implicits._
 
 object GeocodeRequestUtils {
-  val maxRadius = 5000 // 5 km
+  val maxRadius = 45000 // 45 km
 
   def responseIncludes(req: CommonGeocodeRequestParams, include: ResponseIncludes): Boolean = {
     req.responseIncludes.has(include) ||
