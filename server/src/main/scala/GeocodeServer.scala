@@ -338,6 +338,7 @@ class GeocoderHttpService(geocoder: Geocoder.ServiceIface) extends Service[HttpR
       }
 
       response.setHeader("Content-Type", "application/json; charset=utf-8")
+      response.setHeader("X-R5", "g:" + System.getenv("APP_REVISION"))
       response.setContent(ChannelBuffers.copiedBuffer(json, CharsetUtil.UTF_8))
       response.addHeader("Content-Length", response.getContent.readableBytes.toString)
       response
